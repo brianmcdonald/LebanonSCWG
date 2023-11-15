@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.8.*/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#deck-container canvas {
+  z-index: 1;
+  background: none;
+}
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const container = document.getElementById('deck-container');
+    const jsonInput = {
+  "initialViewState": {
+    "bearing": 0,
+    "latitude": 33.319695,
+    "longitude": 35.417976,
+    "pitch": 0,
+    "zoom": 9
+  },
+  "layers": [
+    {
+      "@@type": "H3HexagonLayer",
+      "data": [
+        {
+          "Comments": null,
+          "IDPs": 215,
+          "Site_name_ar": "\u0627\u0644\u062c\u0627\u0645\u0639\u0629 \u0627\u0644\u0644\u0628\u0646\u0627\u0646\u064a\u0629 \u0627\u0644\u0623\u0644\u0645\u0627\u0646\u064a\u0629",
+          "Site_name_en": "The Lebanese- German University  ",
+          "geometry": {
+            "coordinates": [
+              35.231493,
+              33.260834
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db1994bfffff",
+          "lat": 33.260834,
+          "lng": 35.231493
+        },
+        {
+          "Comments": null,
+          "IDPs": 68,
+          "Site_name_ar": "\u0627\u0648\u062a\u064a\u0644 \u0639\u0632 \u0627\u0644\u062f\u064a\u0646",
+          "Site_name_en": "Izz-Adeen's Hotel",
+          "geometry": {
+            "coordinates": [
+              35.690095,
+              33.396422
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db11629fffff",
+          "lat": 33.396422,
+          "lng": 35.690095
+        },
+        {
+          "Comments": null,
+          "IDPs": 290,
+          "Site_name_ar": "\u062a\u0643\u0645\u064a\u0644\u064a\u0629 \u0635\u0648\u0631 \u0627\u0644\u0631\u0633\u0645\u064a\u0629 \u0627\u0644\u062b\u0627\u0646\u064a\u0629",
+          "Site_name_en": "The Second Official of Tyre ",
+          "geometry": {
+            "coordinates": [
+              35.216333,
+              33.260723
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db19b35fffff",
+          "lat": 33.260723,
+          "lng": 35.216333
+        },
+        {
+          "Comments": null,
+          "IDPs": 126,
+          "Site_name_ar": "\u062a\u0643\u0645\u064a\u0644\u064a\u0629 \u0635\u0648\u0631 \u0644\u0644\u0628\u0646\u0627\u062a",
+          "Site_name_en": "Tyre's Official Centre for Girls",
+          "geometry": {
+            "coordinates": [
+              35.213632,
+              33.260005
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db19b23fffff",
+          "lat": 33.260005,
+          "lng": 35.213632
+        },
+        {
+          "Comments": null,
+          "IDPs": 59,
+          "Site_name_ar": "\u062c\u0645\u0639\u064a\u0629 \u0627\u0644\u0633\u0644\u0627\u0645",
+          "Site_name_en": "The Association of Peace",
+          "geometry": {
+            "coordinates": [
+              35.668068,
+              33.319382
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db112b3fffff",
+          "lat": 33.319382,
+          "lng": 35.668068
+        },
+        {
+          "Comments": null,
+          "IDPs": 22,
+          "Site_name_ar": "\u062c\u0645\u0639\u064a\u0629 \u0646\u0648\u0631",
+          "Site_name_en": "Nour's Foundation",
+          "geometry": {
+            "coordinates": [
+              35.684524,
+              33.398571
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db11663fffff",
+          "lat": 33.398571,
+          "lng": 35.684524
+        },
+        {
+          "Comments": null,
+          "IDPs": 11,
+          "Site_name_ar": "\u062f\u064a\u0631 \u0635\u064a\u062f\u0646\u0627\u064a\u0627",
+          "Site_name_en": "Saiydaniya's Monestary",
+          "geometry": {
+            "coordinates": [
+              35.691829,
+              33.396932
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db11629fffff",
+          "lat": 33.396932,
+          "lng": 35.691829
+        },
+        {
+          "Comments": null,
+          "IDPs": 61,
+          "Site_name_ar": "\u0645\u062a\u0648\u0633\u0637\u0629 \u0645\u0631\u062c \u0627\u0644\u0632\u0647\u0648\u0631 \u0627\u0644\u0631\u0633\u0645\u064a\u0629",
+          "Site_name_en": "The Middle Official Marj al Zuhoor: lit. The Middle Field of Flowers",
+          "geometry": {
+            "coordinates": [
+              35.745058,
+              33.465255
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db116d1fffff",
+          "lat": 33.465255,
+          "lng": 35.745058
+        },
+        {
+          "Comments": null,
+          "IDPs": 41,
+          "Site_name_ar": "\u0645\u0631\u0643\u0632 \u0623\u062d\u0631\u0627\u062c \u062d\u0627\u0635\u0628\u064a\u0627",
+          "Site_name_en": "Hasbaya's Center of Forest",
+          "geometry": {
+            "coordinates": [
+              35.682655,
+              33.399448
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db11663fffff",
+          "lat": 33.399448,
+          "lng": 35.682655
+        },
+        {
+          "Comments": null,
+          "IDPs": 120,
+          "Site_name_ar": "\u0645\u0647\u0646\u064a\u0629 \u0635\u0648\u0631 \u0627\u0644\u0641\u0646\u064a\u0629",
+          "Site_name_en": "Tyre's Art Center",
+          "geometry": {
+            "coordinates": [
+              35.217447,
+              33.262672
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db19b35fffff",
+          "lat": 33.262672,
+          "lng": 35.217447
+        },
+        {
+          "Comments": null,
+          "IDPs": 14,
+          "Site_name_ar": "\u0646\u0627\u062f\u064a \u0643\u0648\u0643\u0628\u0627",
+          "Site_name_en": "Planet Club/ Club Planet",
+          "geometry": {
+            "coordinates": [
+              35.647458,
+              33.39194
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db18d95fffff",
+          "lat": 33.39194,
+          "lng": 35.647458
+        },
+        {
+          "Comments": null,
+          "IDPs": 46,
+          "Site_name_ar": "\u0645\u0628\u0646\u0649 \u0628\u0644\u062f\u064a\u0629 \u0643\u0641\u0631\u062f\u0646\u064a\u0633",
+          "Site_name_en": "Kafarnadas' City Building",
+          "geometry": {
+            "coordinates": [
+              35.85285,
+              33.548056
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db1aae5fffff",
+          "lat": 33.548056,
+          "lng": 35.85285
+        }
+      ],
+      "extruded": false,
+      "filled": true,
+      "getFillColor": "@@=[255, 140, 0]",
+      "getHexagon": "@@=h3_08",
+      "id": "d2aaf5cc-cec3-4751-acb7-cba2dd5fc590",
+      "lineWidthMinPixels": 1,
+      "pickable": true,
+      "stroked": true
+    },
+    {
+      "@@type": "H3HexagonLayer",
+      "data": [
+        {
+          "Act. Nbr of rooms": 21,
+          "Area": "TYRE",
+          "Camp": "Outside camp",
+          "Capacity Individual per unit": 378,
+          "Premises_name": "Houleh Elementary and Preparatory School",
+          "Rented/Owned": "Rented",
+          "Serial": 1,
+          "Unnamed: 1": 2.0,
+          "geometry": {
+            "coordinates": [
+              35.27265,
+              33.36211
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db19abdfffff",
+          "lat": 33.36211,
+          "lng": 35.27265,
+          "subarea_name": "Kfar Bedda"
+        },
+        {
+          "Act. Nbr of rooms": 20,
+          "Area": "TYRE",
+          "Camp": "Outside camp",
+          "Capacity Individual per unit": 360,
+          "Premises_name": "Mansoura Elementary and Preparatory School",
+          "Rented/Owned": "Rented",
+          "Serial": 2,
+          "Unnamed: 1": null,
+          "geometry": {
+            "coordinates": [
+              35.25654,
+              33.32385
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db19857fffff",
+          "lat": 33.32385,
+          "lng": 35.25654,
+          "subarea_name": "Qasmieh"
+        },
+        {
+          "Act. Nbr of rooms": 27,
+          "Area": "SAIDA",
+          "Camp": "Outside camp",
+          "Capacity Individual per unit": 486,
+          "Premises_name": "Beit Jala, Preparatory and Seccondary School",
+          "Rented/Owned": "Owned",
+          "Serial": 3,
+          "Unnamed: 1": 3.0,
+          "geometry": {
+            "coordinates": [
+              35.42945,
+              33.62154
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db18653fffff",
+          "lat": 33.62154,
+          "lng": 35.42945,
+          "subarea_name": "Siblin"
+        },
+        {
+          "Act. Nbr of rooms": 11,
+          "Area": "SAIDA",
+          "Camp": "Outside camp",
+          "Capacity Individual per unit": 198,
+          "Premises_name": "Beir Zeit Elementary School",
+          "Rented/Owned": "Owned",
+          "Serial": 4,
+          "Unnamed: 1": null,
+          "geometry": {
+            "coordinates": [
+              35.42936,
+              33.62109
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db18653fffff",
+          "lat": 33.62109,
+          "lng": 35.42936,
+          "subarea_name": "Siblin"
+        },
+        {
+          "Act. Nbr of rooms": 77,
+          "Area": "SAIDA",
+          "Camp": "Outside camp",
+          "Capacity Individual per unit": 1386,
+          "Premises_name": "Siblin Training Center",
+          "Rented/Owned": "Owned",
+          "Serial": 5,
+          "Unnamed: 1": null,
+          "geometry": {
+            "coordinates": [
+              35.43107,
+              33.62039
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db18653fffff",
+          "lat": 33.62039,
+          "lng": 35.43107,
+          "subarea_name": "Siblin"
+        },
+        {
+          "Act. Nbr of rooms": 11,
+          "Area": "CLA",
+          "Camp": "Outside camp",
+          "Capacity Individual per unit": 198,
+          "Premises_name": "Ras el-Ein Elementary and Preparatory School",
+          "Rented/Owned": "Rented",
+          "Serial": 6,
+          "Unnamed: 1": 3.0,
+          "geometry": {
+            "coordinates": [
+              35.50094,
+              33.87041
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882da24e31fffff",
+          "lat": 33.87041,
+          "lng": 35.50094,
+          "subarea_name": "Sabra"
+        },
+        {
+          "Act. Nbr of rooms": 25,
+          "Area": "CLA",
+          "Camp": "Outside camp",
+          "Capacity Individual per unit": 450,
+          "Premises_name": "Yabud Elementary School",
+          "Rented/Owned": "Rented",
+          "Serial": 7,
+          "Unnamed: 1": null,
+          "geometry": {
+            "coordinates": [
+              35.50026,
+              33.87083
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882da24e31fffff",
+          "lat": 33.87083,
+          "lng": 35.50026,
+          "subarea_name": "Sabra"
+        },
+        {
+          "Act. Nbr of rooms": 24,
+          "Area": "CLA",
+          "Camp": "Outside camp",
+          "Capacity Individual per unit": 432,
+          "Premises_name": "Carmel School",
+          "Rented/Owned": "Rented",
+          "Serial": 8,
+          "Unnamed: 1": null,
+          "geometry": {
+            "coordinates": [
+              35.53736,
+              33.89054
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882da24ea9fffff",
+          "lat": 33.89054,
+          "lng": 35.53736,
+          "subarea_name": "Burj Hammoud"
+        },
+        {
+          "Act. Nbr of rooms": 12,
+          "Area": "NLA",
+          "Camp": "Outside camp",
+          "Capacity Individual per unit": 216,
+          "Premises_name": "Rafah School",
+          "Rented/Owned": "Rented",
+          "Serial": 9,
+          "Unnamed: 1": 3.0,
+          "geometry": {
+            "coordinates": [
+              35.81729,
+              34.44879
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882da22a89fffff",
+          "lat": 34.44879,
+          "lng": 35.81729,
+          "subarea_name": "Tripoli"
+        },
+        {
+          "Act. Nbr of rooms": 46,
+          "Area": "NLA",
+          "Camp": "Nahr El Bared",
+          "Capacity Individual per unit": 828,
+          "Premises_name": "Manara Secondary Coeducational School and VTC",
+          "Rented/Owned": "Owned",
+          "Serial": 10,
+          "Unnamed: 1": null,
+          "geometry": {
+            "coordinates": [
+              35.9575,
+              34.51309
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882da22c03fffff",
+          "lat": 34.51309,
+          "lng": 35.9575,
+          "subarea_name": "Nahr El Bared camp"
+        },
+        {
+          "Act. Nbr of rooms": 43,
+          "Area": "NLA",
+          "Camp": "Nahr El Bared",
+          "Capacity Individual per unit": 774,
+          "Premises_name": "Toubas and Gazzeh Elementary and Preparatory School",
+          "Rented/Owned": "Owned",
+          "Serial": 11,
+          "Unnamed: 1": null,
+          "geometry": {
+            "coordinates": [
+              35.96064,
+              34.51612
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882da22c03fffff",
+          "lat": 34.51612,
+          "lng": 35.96064,
+          "subarea_name": "Nahr El Bared camp"
+        },
+        {
+          "Act. Nbr of rooms": 26,
+          "Area": "BEKAA",
+          "Camp": "Outside camp",
+          "Capacity Individual per unit": 468,
+          "Premises_name": "Jarmaq Secondary School",
+          "Rented/Owned": "Owned",
+          "Serial": 12,
+          "Unnamed: 1": 1.0,
+          "geometry": {
+            "coordinates": [
+              35.87908,
+              33.82423
+            ],
+            "type": "Point"
+          },
+          "h3_08": "882db1a639fffff",
+          "lat": 33.82423,
+          "lng": 35.87908,
+          "subarea_name": "Saadnayel"
+        }
+      ],
+      "extruded": false,
+      "filled": true,
+      "getFillColor": "@@=[58, 141, 222]",
+      "getHexagon": "@@=h3_08",
+      "id": "e71a581f-94d1-48ee-8b55-8daa59f3f2c5",
+      "lineWidthMinPixels": 1,
+      "pickable": true,
+      "stroked": true
+    }
+  ],
+  "mapProvider": "carto",
+  "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+  "views": [
+    {
+      "@@type": "MapView",
+      "controller": true
+    }
+  ]
+};
+    const tooltip = {'html': '<b>Name:</b> {Site_name_en}</br><b>Occupancy:</b> {IDPs}', 'style': {'backgroundColor': '#f6f7ec', 'color': '#195b71'}};
+    const customLibraries = null;
+    const configuration = null;
+
+    const deckInstance = createDeck({
+                  container,
+      jsonInput,
+      tooltip,
+      customLibraries,
+      configuration
+    });
+
+  </script>
+</html>
